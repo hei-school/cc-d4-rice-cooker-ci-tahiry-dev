@@ -1,15 +1,11 @@
-# Rice Cooker Application Managment
+# Rice Cooker Application Management
 
-> The <b>Portfolio Management</b> application simulates a real-world portfolio, allowing users to store various objects classified into two types:
-> Unique Objects, such as National Identity Cards and Driver's Licenses/ and Duplicable Objects, including Money, ID photos, business cards, and more.
+> 
+> 
 
 ## App functionality
 
-- The application is written in four different languages, each stored in separate branches. Installation details will be provided later.
-- Consequently, users can choose their preferred language to begin with. Once in their selected branch, they can launch the application in the terminal. Specific instructions on how to launch the app will also be provided later.
-- Once the application is running, the user will be prompted with various choices. The initial action involves creating either a unique or non-unique object, followed by step-by-step instructions.
-- After the object has been created, users can perform operations by choosing to view the list of unique or non-unique objects.
-- All these objects are enumerated, and users can select the desired item to perform various operations.
+- 
 
 ## Screenshot of the app.
 
@@ -18,10 +14,10 @@
 
 ## Built With
 
-- Python
-- Java
-- Javascript
-- Ruby
+- 
+- 
+- 
+- 
 
 ## Prerequisities
 
