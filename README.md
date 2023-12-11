@@ -1,15 +1,13 @@
-# Rice Cooker Application Managment
+# Rice Cooker Application Management
 
-> The <b>Portfolio Management</b> application simulates a real-world portfolio, allowing users to store various objects classified into two types:
-> Unique Objects, such as National Identity Cards and Driver's Licenses/ and Duplicable Objects, including Money, ID photos, business cards, and more.
+> This program emulates the functionality of a rice cooker within a terminal environment, offering a streamlined and user-friendly experience for rice preparation.
+
 
 ## App functionality
 
-- The application is written in four different languages, each stored in separate branches. Installation details will be provided later.
-- Consequently, users can choose their preferred language to begin with. Once in their selected branch, they can launch the application in the terminal. Specific instructions on how to launch the app will also be provided later.
-- Once the application is running, the user will be prompted with various choices. The initial action involves creating either a unique or non-unique object, followed by step-by-step instructions.
-- After the object has been created, users can perform operations by choosing to view the list of unique or non-unique objects.
-- All these objects are enumerated, and users can select the desired item to perform various operations.
+- Upon program initiation, users will be prompted to select their desired type of rice for cooking
+- Subsequently, they will have the option to specify the quantity of rice to be prepared
+- Following this input, a brief waiting period ensues, culminating in the completion of the rice cooking process. Enjoy the freshly cooked rice with utmost convenience. !!!
 
 ## Screenshot of the app.
 
@@ -18,14 +16,18 @@
 
 ## Built With
 
-- Python
-- Java
-- Javascript
-- Ruby
+- Typescript
+- Go
+- Swift
+- Dart
 
 ## Prerequisities
 
-To get this project up and running locally, you must have 
+To get this project up and running locally, you must have the following programs installed on your machine:
+    - [NodeJs](https://nodejs.org/en/download)
+    - [Go](https://go.dev/doc/install)
+    - [Dart](https://dart.dev/get-dart)
+    - [swift](https://www.swift.org/install/)
 
 ## Getting Started
 
@@ -33,7 +35,7 @@ To get this project up and running locally, you must have
 
 **Step 1**<br>
 Navigate through the local folder where you want to clone the repository and run<br>
-`git clone `. It will clone the repo to your local folder.<br>
+`git clone https://github.com/hei-school/cc-d4-rice-cooker-ci-tahiry-dev.git`. It will clone the repo to your local folder.<br>
 **Step 2**<br>
 get inside the local folder where you cloned the repository and checkout to your preferred branch by typing the following command git checkout/your favorite language<br>
 **Step 3**<br>
