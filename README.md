@@ -11,8 +11,7 @@
 
 ## Screenshot of the app.
 
-![screenshot]()
-![screenshot]()
+![screenshot](https://github.com/tahiry-dev/favorite_quotes/assets/47100064/e1a77204-f008-4406-9d03-a6a44f01afce)
 
 ## Built With
 
@@ -37,9 +36,42 @@ To get this project up and running locally, you must have the following programs
 Navigate through the local folder where you want to clone the repository and run<br>
 `git clone https://github.com/hei-school/cc-d4-rice-cooker-ci-tahiry-dev.git`. It will clone the repo to your local folder.<br>
 **Step 2**<br>
-get inside the local folder where you cloned the repository and checkout to your preferred branch by typing the following command git checkout/your favorite language<br>
+get inside the local folder where you cloned the repository. Within the project, you'll find five branches. Each branch, apart from the main branch, is dedicated to a specific programming language: `feature/typescript`, `feature/go`, `feature/dart`, `feature/swift`. 
+Choose your preferred branch and follow the next steps to run the program.
 **Step 3**<br>
+Running the program depends on the branch, i.e., the programming language you have chosen. Let's break down each branch:
 
+  ### feature/typescript:
+       - The first step is to run the following command in your terminal: `npm install`
+       - Now you can run the program with this command: `node dist/riceCooker.js`
+
+  ### feature/go:
+       - Launching the app is quite easy once you meet the requirements, please type this command: `go run main.go`
+
+  ### feature/dart:
+      - Once you meet the requirements, please type this command: `dart rice_cooker.dart`
+
+  ### feature/swift:
+      - After everything is installed, launch the following command: `./RiceCookerSimulator `
+      
+
+## Testing
+
+Each programming language has its unique process for launching tests. Let's explore each one individually.
+
+  ### feature/typescript:
+       with this command `npm run lint`
+       
+  ### feature/go:
+      with this command: `golangci-lint run main.go`
+
+  ### feature/dart:
+       with this command: `dart analyze` 
+       
+  ### feature/swift:
+    with this command: `swiftlint`
+
+    
 
 ## Authors
 
