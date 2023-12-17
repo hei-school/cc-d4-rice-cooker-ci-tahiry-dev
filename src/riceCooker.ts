@@ -2,11 +2,10 @@
 /* eslint-env node */
 
 const userPrompt = require('prompt-sync')();
-import { setTimeout } from 'timers';
 
 let cuissonEnCours = false;
 
-function cuireRiz(type: string, quantite: number): void {
+export function cuireRiz(type: string, quantite: number): void {
     console.log(`Début de la cuisson pour ${quantite}g de riz ${type}...`);
 
     cuissonEnCours = true;
@@ -15,8 +14,6 @@ function cuireRiz(type: string, quantite: number): void {
         if (cuissonEnCours) {
             console.log("Votre Riz est prêt !");
             cuissonEnCours = false;
-        } else {
-            console.log("Cuisson annulée.");
         }
     }, 10000);
 }

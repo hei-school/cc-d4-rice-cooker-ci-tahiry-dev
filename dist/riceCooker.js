@@ -2,22 +2,20 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
 /* eslint-env node */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.cuireRiz = void 0;
 var userPrompt = require('prompt-sync')();
-var timers_1 = require("timers");
 var cuissonEnCours = false;
 function cuireRiz(type, quantite) {
     console.log("D\u00E9but de la cuisson pour ".concat(quantite, "g de riz ").concat(type, "..."));
     cuissonEnCours = true;
-    (0, timers_1.setTimeout)(function () {
+    setTimeout(function () {
         if (cuissonEnCours) {
             console.log("Votre Riz est prêt !");
             cuissonEnCours = false;
         }
-        else {
-            console.log("Cuisson annulée.");
-        }
     }, 10000);
 }
+exports.cuireRiz = cuireRiz;
 function main() {
     console.log("Bienvenue dans le simulateur de rice-cooker !");
     var typeDeRiz = userPrompt("Entrez le type de riz : ");
