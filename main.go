@@ -11,22 +11,13 @@ func (l Logger) log(message string) {
 	fmt.Println(message)
 }
 
-var cuissonEnCours bool
-
 func cuireRiz(typeDeRiz string, quantiteDeRiz int) {
 	logger := Logger{}
 	logger.log(fmt.Sprintf("Début de la cuisson pour %dg de riz %s...", quantiteDeRiz, typeDeRiz))
 
-	cuissonEnCours = true
-
 	time.Sleep(10 * time.Second)
 
-	if cuissonEnCours {
-		logger.log("Votre Riz est prêt !")
-		cuissonEnCours = false
-	} else {
-		logger.log("Cuisson annulée.")
-	}
+	logger.log("Votre Riz est prêt !")
 }
 
 func main() {
