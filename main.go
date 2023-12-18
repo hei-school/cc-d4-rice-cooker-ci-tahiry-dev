@@ -1,39 +1,63 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"time"
 )
 
-type Logger struct{}
-
-func (l Logger) log(message string) {
-	fmt.Println(message)
+type Logger struct {
+	logContents []string
 }
 
-func cuireRiz(typeDeRiz string, quantiteDeRiz int) {
-	logger := Logger{}
-	logger.log(fmt.Sprintf("Début de la cuisson pour %dg de riz %s...", quantiteDeRiz, typeDeRiz))
+func (l *Logger) log(message string) {
+	fmt.Println(message)
+	l.logContents = append(l.logContents, message)
+}
 
+func (l *Logger) getLogContents() []string {
+	return append([]string(nil), l.logContents...)
+}
+
+func cuireRiz(typeDeRiz string, quantite int, logger *Logger) {
+	logger.log(fmt.Sprintf("Début de la cuisson pour %d g de riz %s...", quantite, typeDeRiz))
 	time.Sleep(10 * time.Second)
-
-	logger.log("Votre Riz est prêt !")
+	logger.log("Votre riz est prêt !")
 }
 
 func main() {
 	logger := Logger{}
 	logger.log("Bienvenue dans le simulateur de rice-cooker !")
 
-	fmt.Print("Entrez le type de riz : ")
 	var typeDeRiz string
-	fmt.Scanln(&typeDeRiz)
+	scanner := bufio.NewScanner(os.Stdin)
 
-	fmt.Print("Entrez la quantité de riz (en grammes) : ")
+	for typeDeRiz == "" {
+		fmt.Print("Entrez le type de riz : ")
+		scanner.Scan()
+		typeDeRiz = scanner.Text()
+		typeDeRiz = (typeDeRiz)
+		if typeDeRiz == "" {
+			logger.log("Le type de riz ne peut pas être vide. Veuillez le saisir.")
+		}
+	}
+
 	var quantiteDeRiz int
-	fmt.Scanln(&quantiteDeRiz)
+	for quantiteDeRiz <= 10 {
+		fmt.Print("Entrez la quantité de riz (en grammes) : ")
+		scanner.Scan()
+		quantiteDeRizStr := scanner.Text()
+		quantiteDeRiz = 0
+		fmt.Sscanf(quantiteDeRizStr, "%d", &quantiteDeRiz)
+
+		if quantiteDeRiz <= 10 {
+			logger.log("Veuillez entrer une quantité en nombre entier supérieur à 10.")
+		}
+	}
 
 	logger.log(fmt.Sprintf("Type de riz : %s", typeDeRiz))
-	logger.log(fmt.Sprintf("Quantité de riz : %dg", quantiteDeRiz))
+	logger.log(fmt.Sprintf("Quantité de riz : %d g", quantiteDeRiz))
 
-	cuireRiz(typeDeRiz, quantiteDeRiz)
+	cuireRiz(typeDeRiz, quantiteDeRiz, &logger)
 }
