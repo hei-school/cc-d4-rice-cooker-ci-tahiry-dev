@@ -55,7 +55,7 @@ Running the program depends on the branch, i.e., the programming language you ha
       - After everything is installed, launch the following command: `./RiceCookerSimulator `
       
 
-## Testing
+## Linter Testing
 
 Each programming language has its unique process for launching tests. Let's explore each one individually.
 
