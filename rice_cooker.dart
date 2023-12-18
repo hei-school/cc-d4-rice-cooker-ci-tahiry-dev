@@ -1,38 +1,51 @@
 import 'dart:io';
 
 class Logger {
+  List<String> logContents = [];
+
   void log(String message) {
     print(message);
+    logContents.add(message);
+  }
+
+  List<String> getLogContents() {
+    return List.from(logContents);
   }
 }
-
-bool cuissonEnCours = false;
 
 void cuireRiz(String type, int quantite) {
   var logger = Logger();
   logger.log("Début de la cuisson pour $quantite g de riz $type...");
-
-  cuissonEnCours = true;
-
   sleep(Duration(seconds: 10));
-
-  if (cuissonEnCours) {
-    logger.log("Votre riz est prêt !");
-    cuissonEnCours = false;
-  } else {
-    logger.log("Cuisson annulée.");
-  }
+  logger.log("Votre riz est prêt !");
 }
 
 void main() {
   var logger = Logger();
   logger.log("Bienvenue dans le simulateur de rice-cooker !");
 
-  stdout.write("Entrez le type de riz : ");
-  var typeDeRiz = stdin.readLineSync() ?? "";
+  String? typeDeRiz;
 
-  stdout.write("Entrez la quantité de riz (en grammes) : ");
-  var quantiteDeRiz = int.tryParse(stdin.readLineSync() ?? "") ?? 0;
+  while (typeDeRiz == null || typeDeRiz.isEmpty) {
+    stdout.write("Entrez le type de riz : ");
+    typeDeRiz = stdin.readLineSync()?.trim();
+
+    if (typeDeRiz == null || typeDeRiz.isEmpty) {
+      logger.log("Le type de riz ne peut pas être vide. Veuillez le saisir.");
+    }
+  }
+
+  int quantiteDeRiz = 0;
+
+  while (quantiteDeRiz <= 10) {
+    stdout.write("Entrez la quantité de riz (en grammes) : ");
+    var quantiteDeRizStr = stdin.readLineSync()?.trim();
+    quantiteDeRiz = int.tryParse(quantiteDeRizStr ?? "0") ?? 0;
+
+    if (quantiteDeRiz <= 10) {
+      logger.log("Veuillez entrer une quantité en nombre entier supérieur à 10.");
+    }
+  }
 
   logger.log("Type de riz : $typeDeRiz");
   logger.log("Quantité de riz : $quantiteDeRiz g");

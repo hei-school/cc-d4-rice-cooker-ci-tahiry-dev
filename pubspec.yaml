@@ -1,0 +1,14 @@
+name: rice_cooker_simulation
+description: >
+  Simulate the operation of a rice cooker.
+  Choose your rice type and quantity, and experience the virtual cooking process.
+version: 1.0.0
+homepage: https://example-rice-cooker-simulation.com
+documentation: https://example-rice-cooker-simulation.com/docs
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dev_dependencies:
+  test: any
+  mocktail: ^1.0.2
