@@ -18,8 +18,22 @@ function cuireRiz(type, quantite) {
 exports.cuireRiz = cuireRiz;
 function main() {
     console.log("Bienvenue dans le simulateur de rice-cooker !");
-    var typeDeRiz = userPrompt("Entrez le type de riz : ");
-    var quantiteDeRiz = parseInt(userPrompt("Entrez la quantité de riz (en grammes) : "), 10);
+    var typeDeRiz = "";
+    var quantiteDeRiz = 0;
+    while (typeDeRiz === "") {
+        typeDeRiz = userPrompt("Entrez le type de riz : ").trim();
+        if (typeDeRiz === "") {
+            console.log("Le type de riz ne peut pas être vide. Veuillez le saisir.");
+        }
+    }
+    var quantiteDeRizStr;
+    do {
+        quantiteDeRizStr = userPrompt("Entrez la quantité de riz (en grammes) : ");
+        quantiteDeRiz = parseInt(quantiteDeRizStr, 10);
+        if (isNaN(quantiteDeRiz) || quantiteDeRiz <= 10) {
+            console.log("Veuillez entrer une quantité en nombre entier supérieur à 10.");
+        }
+    } while (isNaN(quantiteDeRiz) || quantiteDeRiz <= 10);
     console.log("Type de riz : ".concat(typeDeRiz));
     console.log("Quantit\u00E9 de riz : ".concat(quantiteDeRiz, "g"));
     cuireRiz(typeDeRiz, quantiteDeRiz);
